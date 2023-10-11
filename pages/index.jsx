@@ -32,12 +32,15 @@ export default function Home() {
           imageAlt="Adult teacher tutoring a child student."
           invert={false}
           buttons={[
-            <Link href="/about">
+            <Link href="/about" key="who1">
               <Button color="primary" variant="solid" size="lg">
                 Learn More
               </Button>
             </Link>,
-            <Link href="mailto:info@genedusa.com?subject=Inquiry from GenEdUSA.com">
+            <Link
+              href="mailto:info@genedusa.com?subject=Inquiry from GenEdUSA.com"
+              key="who2"
+            >
               <Button color="secondary" variant="ghost" size="lg">
                 Email Us
               </Button>
@@ -52,12 +55,15 @@ export default function Home() {
           imageAlt="An adult teacher tutoring a group of 3 teenagers."
           invert={true}
           buttons={[
-            <Link href="/services">
+            <Link href="/services" key="what1">
               <Button color="primary" variant="solid" size="lg">
                 View Services
               </Button>
             </Link>,
-            <Link href="mailto:info@genedusa.com?subject=Inquiry from GenEdUSA.com">
+            <Link
+              href="mailto:info@genedusa.com?subject=Inquiry from GenEdUSA.com"
+              key="what2"
+            >
               <Button color="secondary" variant="ghost" size="lg">
                 Email Us
               </Button>
