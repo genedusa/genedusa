@@ -17,7 +17,7 @@ import {
 
 import ThemeSwitch from "~/components/themeswitch/themeswitch";
 
-export default function myNavbar() {
+export default function MyNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems = [
     ["Home", "/"],
