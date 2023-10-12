@@ -21,7 +21,7 @@ export default function ThemeSwitch() {
   return (
     <div>
       <Button
-        className="hidden sm:inline-flex"
+        className=""
         color="default"
         variant="faded"
         isIconOnly

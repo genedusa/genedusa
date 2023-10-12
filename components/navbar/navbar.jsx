@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Navbar,
   NavbarBrand,
@@ -7,7 +9,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -17,21 +18,34 @@ import {
 import ThemeSwitch from "~/components/themeswitch/themeswitch";
 
 export default function myNavbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuItems = [
+    ["Home", "/"],
+    ["Services", "/services"],
+    ["Contact Us", "/about"],
+  ];
+
   function createRedirect(dir, subdir) {
     return `${dir}${subdir}`;
   }
 
   return (
     <Navbar id="navbar" position="sticky" isBordered>
-      <NavbarBrand>
-        <img
-          src="/logo.png"
-          className="hidden h-12 w-12 object-contain sm:inline"
-          alt="GenEdUSA Logo"
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
         />
-        <p className="hidden text-3xl text-inherit md:block">GenEdUSA</p>
-      </NavbarBrand>
-      <NavbarContent justify="hidden sm:flex center">
+        <NavbarBrand>
+          <img
+            src="/logo.png"
+            className="h-12 w-12 object-contain"
+            alt="GenEdUSA Logo"
+          />
+          <p className="text-3xl text-inherit">GenEdUSA</p>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent className="hidden sm:flex" justify="center">
         <NavbarItem>
           <Link href="/" className="text-xl">
             Home
@@ -125,6 +139,15 @@ export default function myNavbar() {
       <NavbarContent justify="end">
         <ThemeSwitch />
       </NavbarContent>
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item[0]}-${index}`}>
+            <Link className="w-full text-5xl" href={`${item[1]}`} size="lg">
+              {item[0]}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </Navbar>
   );
 }

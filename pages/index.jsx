@@ -23,7 +23,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col items-center">
+      <div className="mt-24 flex flex-col items-center gap-2 sm:mt-0 sm:gap-10">
         <ArticleSection
           title="Who are we?"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -47,6 +47,7 @@ export default function Home() {
             </Link>,
           ]}
         />
+        <div className="h-32 sm:h-0" />
         <ArticleSection
           title="What services do we offer?"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -70,8 +71,8 @@ export default function Home() {
             </Link>,
           ]}
         />
+        <div className="h-32 sm:h-0" />
       </div>
-
       <Footer />
     </main>
   );

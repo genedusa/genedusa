@@ -39,8 +39,8 @@ export default function Footer() {
         </div>
       </div>
       <Divider />
-      <div className="flex flex-col justify-around gap-2 px-8 py-5 text-center md:flex-row md:px-16">
-        <div className="max-w-md flex-grow md:px-12">
+      <div className="flex max-w-screen-2xl flex-col items-center justify-around gap-2 self-center px-8 py-5 text-center md:flex-row md:gap-12">
+        <div className="md:max-w-xs">
           <h2 className="font-bold">GenEdUSA</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -49,10 +49,12 @@ export default function Footer() {
             aliquip ex ea commodo consequat.
           </p>
         </div>
-        <Divider orientation="vertical" className="h-auto" />
-        <div className="flex-grow md:max-w-lg md:px-12">
+        <div className="md:max-w-xs">
           <h2 className="font-bold">Services</h2>
           <ul>
+            <li>
+              <Link href="/services">All Services</Link>
+            </li>
             <li>
               <Link href="/services/service1">Service 1</Link>
             </li>
@@ -67,8 +69,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <Divider orientation="vertical" className="h-auto" />
-        <div className="flex-grow md:max-w-lg md:px-12">
+        <div className="md:max-w-xs">
           <h2 className="font-bold">Contact Us</h2>
           <p>123 Smith Street, Hoboken NJ, 07030, US</p>
           <p>+1 (123) 456-7890</p>
