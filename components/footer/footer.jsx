@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Divider, Link } from "@nextui-org/react";
+import services from "~/data/services";
 
 export default function Footer() {
   const { theme, setTheme } = useTheme();
@@ -39,7 +40,7 @@ export default function Footer() {
         </div>
       </div>
       <Divider />
-      <div className="flex max-w-screen-2xl flex-col items-center justify-around gap-2 self-center px-8 py-5 text-center md:flex-row md:gap-12">
+      <div className="flex max-w-screen-2xl flex-col items-center justify-around gap-2 self-center px-8 py-5 text-center md:flex-row md:items-start md:gap-12">
         <div className="md:max-w-xs">
           <h2 className="font-bold">GenEdUSA</h2>
           <p>
@@ -49,25 +50,19 @@ export default function Footer() {
             aliquip ex ea commodo consequat.
           </p>
         </div>
-        <div className="md:max-w-xs">
+        <div className="flex flex-col items-center md:max-w-xs">
           <h2 className="font-bold">Services</h2>
-          <ul>
-            <li>
-              <Link href="/services">All Services</Link>
-            </li>
-            <li>
-              <Link href="/services/service1">Service 1</Link>
-            </li>
-            <li>
-              <Link href="/services/service2">Service 2</Link>
-            </li>
-            <li>
-              <Link href="/services/service3">Service 3</Link>
-            </li>
-            <li>
-              <Link href="/services/service4">Service 4</Link>
-            </li>
-          </ul>
+          <Link href="/services">All Services</Link>
+          {services.map((service) => {
+            return (
+              <Link
+                key={`footer_${service.id}`}
+                href={`/services#${service.id}`}
+              >
+                {service.title}
+              </Link>
+            );
+          })}
         </div>
         <div className="md:max-w-xs">
           <h2 className="font-bold">Contact Us</h2>

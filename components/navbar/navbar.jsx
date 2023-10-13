@@ -22,7 +22,7 @@ export default function MyNavbar() {
   const menuItems = [
     ["Home", "/"],
     ["Services", "/services"],
-    ["Contact Us", "/about"],
+    ["Enroll", "/enroll"],
   ];
 
   function createRedirect(dir, subdir) {
@@ -46,18 +46,42 @@ export default function MyNavbar() {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex" justify="center">
-        <NavbarItem>
-          <Link href="/" className="text-xl">
-            Home
-          </Link>
-        </NavbarItem>
-        <Dropdown>
+        {menuItems.map((item, index) => (
+          <NavbarItem key={`${item[0]}-${index}`}>
+            <Link className="text-xl" href={`${item[1]}`}>
+              {item[0]}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <ThemeSwitch />
+      </NavbarContent>
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`menu-${item[0]}-${index}`}>
+            <Link className="w-full text-5xl" href={`${item[1]}`} size="lg">
+              {item[0]}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
+  );
+}
+
+// OLD DROPDOWN MENU CODE
+// POSSIBLY WILL BE USED LATER
+{
+  /* <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
               <Link className="text-xl">Services</Link>
             </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu
+          </NavbarItem> */
+}
+{
+  /* <DropdownMenu
             aria-label="GenEdUSA Services"
             itemClasses={{
               base: "gap-4",
@@ -128,26 +152,8 @@ export default function MyNavbar() {
             >
               Service 4
             </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <NavbarItem>
-          <Link href="/about" className="text-xl">
-            Contact Us
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <ThemeSwitch />
-      </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item[0]}-${index}`}>
-            <Link className="w-full text-5xl" href={`${item[1]}`} size="lg">
-              {item[0]}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
-  );
+          </DropdownMenu> */
+}
+{
+  /* </Dropdown> */
 }

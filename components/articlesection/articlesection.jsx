@@ -1,7 +1,8 @@
-import { Link, Button, Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 
 export default function ArticleSection({
   title,
+  id,
   description,
   imageSrc,
   imageAlt,
@@ -13,7 +14,10 @@ export default function ArticleSection({
   let buttonAlignment = !invert ? "md:flex-row" : "md:flex-row-reverse";
 
   return (
-    <div className="flex max-w-screen-2xl flex-col justify-between md:flex-row md:px-16 lg:px-32">
+    <div
+      id={id}
+      className="flex max-w-screen-2xl flex-col justify-between md:flex-row md:px-16 lg:px-32"
+    >
       <div
         className={`text-center ${margin} order-2 ${
           !invert ? "md:order-1" : "md:order-2"
