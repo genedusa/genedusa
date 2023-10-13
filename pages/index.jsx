@@ -14,10 +14,10 @@ export default function Home() {
       </Head>
       <Navbar />
       <div className="flex flex-row justify-center bg-gradient-to-b from-accent-50 px-32 py-8 md:py-16">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center text-center">
           <Image src="logo.png" className="w-64" alt="GenEdUSA Logo" />
           <h1 className="text-6xl font-semibold">GenEdUSA</h1>
-          <p className="max-w-lg text-center text-xl">
+          <p className="mt-4 max-w-lg text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
