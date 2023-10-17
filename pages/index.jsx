@@ -1,7 +1,6 @@
 import Head from "next/head";
 
-import Navbar from "~/components/navbar/navbar";
-import Footer from "~/components/footer/footer";
+import PageWrapper from "~/components/pagewrapper/pagewrapper";
 import PageBanner from "~/components/pagebanner/pagebanner";
 import ArticleSectionWrapper from "~/components/articlesectionwrapper/articlesectionwrapper";
 import ArticleSection from "~/components/articlesection/articlesection";
@@ -9,14 +8,13 @@ import sections from "~/data/home";
 
 export default function Home() {
   return (
-    <main>
+    <PageWrapper>
       <Head>
         <title>GenEdUSA | Home</title>
       </Head>
-      <Navbar />
       <PageBanner
         title="GenEdUSA"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        description={`It's never too late to learn.`}
         imgSrc="logo.png"
         imgAlt="GenEdUSA Logo"
       />
@@ -37,7 +35,6 @@ export default function Home() {
           );
         })}
       </ArticleSectionWrapper>
-      <Footer />
-    </main>
+    </PageWrapper>
   );
 }

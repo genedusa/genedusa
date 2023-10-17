@@ -1,22 +1,29 @@
 import Head from "next/head";
 
-import Navbar from "~/components/navbar/navbar";
-import Footer from "~/components/footer/footer";
+import PageWrapper from "~/components/pagewrapper/pagewrapper";
 import PageBanner from "~/components/pagebanner/pagebanner";
+import ProfileCard from "~/components/profilecard/profilecard";
+import general from "~/data/general";
 
 export default function About() {
   return (
-    <main>
+    <PageWrapper>
       <Head>
         <title>GenEdUSA | About</title>
       </Head>
-      <Navbar />
       <PageBanner
         title="Enroll Today"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        description={`Call or email today to inquire about our classes.\nWe provide both group and one-on-one sessions.\nVirtual and in-person options are available.`}
       />
-      <Footer />
-    </main>
+      <div className="flex flex-col items-center justify-center gap-8 py-8 sm:flex-row">
+        <ProfileCard
+          imgSrc={"/logo.png"}
+          name={"GenEdUSA"}
+          role={"General Information"}
+          phone={general.number}
+          email={general.email_info}
+        />
+      </div>
+    </PageWrapper>
   );
 }

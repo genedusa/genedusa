@@ -1,7 +1,6 @@
 import Head from "next/head";
 
-import Navbar from "~/components/navbar/navbar";
-import Footer from "~/components/footer/footer";
+import PageWrapper from "~/components/pagewrapper/pagewrapper";
 import PageBanner from "~/components/pagebanner/pagebanner";
 import ArticleSectionWrapper from "~/components/articlesectionwrapper/articlesectionwrapper";
 import ArticleSection from "~/components/articlesection/articlesection";
@@ -9,15 +8,15 @@ import services from "~/data/services";
 
 export default function Services() {
   return (
-    <main>
+    <PageWrapper>
       <Head>
         <title>GenEdUSA | Services</title>
       </Head>
-      <Navbar />
       <PageBanner
         title="Tutoring Services"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        description={
+          "At GenEd, we offer tutoring services for various topics, such as English for Speakers of Other Languages, K-12 General Education, and Information Technology."
+        }
       />
       <ArticleSectionWrapper>
         {services.map((service, index) => {
@@ -36,7 +35,6 @@ export default function Services() {
           );
         })}
       </ArticleSectionWrapper>
-      <Footer />
-    </main>
+    </PageWrapper>
   );
 }

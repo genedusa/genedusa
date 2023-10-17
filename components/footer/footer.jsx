@@ -1,24 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import { Divider, Link } from "@nextui-org/react";
 import services from "~/data/services";
+import general from "~/data/general";
+import NewLineText from "../newlinetext/newlinetext";
 
 export default function Footer() {
-  const { theme, setTheme } = useTheme();
+  // THEME HANDLERS
+  const { theme } = useTheme();
   const [filter, setFilter] = useState({ filter: "invert(0%)" });
 
   useEffect(() => {
-    if (theme === "light") {
-      setFilter({ filter: "invert(0%)" });
-    }
-    if (theme === "dark") {
-      setFilter({ filter: "invert(100%)" });
-    }
+    if (theme === "light") setFilter({ filter: "invert(0%)" });
+    else setFilter({ filter: "invert(100%)" });
   }, [theme, setFilter]);
 
   return (
     <footer className="flex flex-col bg-background-50">
-      <div className="flex flex-row items-center justify-center px-5 align-middle">
+      {/* <div className="flex flex-row items-center justify-center px-5 align-middle">
         <p className="h-fit w-fit">Get connected with us on social media:</p>
         <div className="flex flex-row items-center">
           <Link href="mailto:info@genedusa.com?subject=Inquiry from GenEdUSA.com">
@@ -38,16 +37,15 @@ export default function Footer() {
             />
           </Link>
         </div>
-      </div>
+      </div> */}
       <Divider />
       <div className="flex max-w-screen-2xl flex-col items-center justify-around gap-2 self-center px-8 py-5 text-center md:flex-row md:items-start md:gap-12">
         <div className="md:max-w-xs">
           <h2 className="font-bold">GenEdUSA</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            <NewLineText
+              text={`GenEd is a tutoring service, designed with flexibility being most important.\nGenEd offers both group and one-on-one sessions, virtual and in-person options, and services to scholars of all ages and needs.\nCall or email today to inquire about our classes.`}
+            />
           </p>
         </div>
         <div className="flex flex-col items-center md:max-w-xs">
@@ -64,11 +62,14 @@ export default function Footer() {
             );
           })}
         </div>
-        <div className="md:max-w-xs">
+        <div className="flex flex-col items-center md:max-w-xs">
           <h2 className="font-bold">Contact Us</h2>
-          <p>123 Smith Street, Hoboken NJ, 07030, US</p>
-          <p>+1 (123) 456-7890</p>
-          <p>info@genedusa.com</p>
+          <Link href={`tel:${general.number}`}>{general.number}</Link>
+          <Link
+            href={`mailto:${general.email_info}?subject=Inquiry from GenEdUSA.com`}
+          >
+            {general.email_info}
+          </Link>
         </div>
       </div>
       <div className="bg-background-100 py-2 text-center">

@@ -1,4 +1,5 @@
 import { Image } from "@nextui-org/react";
+import NewLineText from "../newlinetext/newlinetext";
 
 export default function ArticleSection({
   title,
@@ -24,9 +25,11 @@ export default function ArticleSection({
         } ${textAlignment} px-8`}
       >
         <h2 className="text-3xl md:text-5xl">{title}</h2>
-        <p className="text-lg text-text-900 md:text-2xl">{description}</p>
+        <p className="mt-2 text-lg md:text-2xl">
+          <NewLineText text={description} />
+        </p>
         <div
-          className={`mt-5 flex md:mx-4 ${buttonAlignment} justify-center gap-4 md:justify-start`}
+          className={`mt-4 flex md:mx-4 ${buttonAlignment} justify-center gap-4 md:justify-start`}
         >
           {buttons}
         </div>

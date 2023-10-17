@@ -2,45 +2,19 @@ import { Link, Button } from "@nextui-org/react";
 
 const sections = [
   {
-    title: "Who are we?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "The GenEd Story",
+    description: `GenEd is a tutoring service, designed with flexibility being most important.\nGenEd offers both group and one-on-one sessions, virtual and in-person options, and services to scholars of all ages and needs.\nGenEd takes a holistic approach to education, incorporating social emotional learning and mindfulness within our services.`,
     imageSrc: "/tutoring.jpg",
     imageAlt: "Adult teacher tutoring a child student.",
     buttons: [
-      <Link href="/about" key="who1">
-        <Button color="primary" variant="solid" size="lg">
-          Learn More
-        </Button>
-      </Link>,
-      <Link
-        href="mailto:info@genedusa.com?subject=Inquiry from GenEdUSA.com"
-        key="who2"
-      >
-        <Button color="secondary" variant="ghost" size="lg">
-          Email Us
-        </Button>
-      </Link>,
-    ],
-  },
-  {
-    title: "What services do we offer?",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    imageSrc: "/tutoring2.jpg",
-    imageAlt: "An adult teacher tutoring a group of 3 teenagers.",
-    buttons: [
-      <Link href="/services" key="what1">
+      <Link href="/services" key="g1">
         <Button color="primary" variant="solid" size="lg">
           View Services
         </Button>
       </Link>,
-      <Link
-        href="mailto:info@genedusa.com?subject=Inquiry from GenEdUSA.com"
-        key="what2"
-      >
+      <Link href="/enroll" key="g2">
         <Button color="secondary" variant="ghost" size="lg">
-          Email Us
+          Enroll Today
         </Button>
       </Link>,
     ],
